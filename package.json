@@ -1,0 +1,17 @@
+{
+  "name": "structured-log-field-validator",
+  "version": "0.1.0",
+  "description": "Checks structured log entries against a typed schema and drops invalid records before forwarding",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {}
+}
