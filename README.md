@@ -38,3 +38,10 @@ The trade-off is simplicity over expressiveness. The type system is deliberately
 - **A missing field and an explicitly `undefined` field are the same thing.** Both are treated as "not present"; a required field in either state is an error.
 
 - **A throwing custom validator does not crash the sink.** The exception is caught and reported as a field-level validation error so the entry is rejected rather than crashing the caller.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
